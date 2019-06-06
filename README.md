@@ -1,4 +1,4 @@
-# Archive of some basic helpful codes
+# Some of basic helpful codes
 
 Mostly in Fortran-95, C++ and Python-3
 
