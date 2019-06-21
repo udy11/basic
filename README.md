@@ -1,7 +1,7 @@
-# Some of basic helpful codes
+# Some of my basic helpful codes
 
-Mostly in Fortran-95, C++ and Python-3
+These are some small codes that are helpful in basic tasks in a code.
 
-Some are in Mathematica and Matlab
+Mostly in Fortran-95, C++ and Python-3. Some are in Mathematica and Matlab.
 
-Originally from https://udy11.wordpress.com
+If you would like to make a cryptocurrency donation, please donate at https://sites.google.com/view/udy11-donation
