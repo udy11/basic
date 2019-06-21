@@ -54,6 +54,7 @@ def cmbsf(a, r, ofln):
     cmbs()
     ofl.close()
 
-ofln = 'combs.txt'
-a = (1, 2, 3, 4, 5, 6)
-cmbsf(a, 3, ofln)
+if __name__ == '__main__':
+    ofln = 'combs.txt'
+    a = (1, 2, 3, 4, 5, 6)
+    cmbsf(a, 3, ofln)
