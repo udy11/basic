@@ -1,4 +1,6 @@
 # Last Updated: 2019-Jul-10
+# Udaya Maurya (udaya_cbscients@yahoo.com, telegram: https://t.me/udy11)
+# Source: https://github.com/udy11, https://gitlab.com/udy11
 
 # Flux Corrected Transport algorithm to solve Generalized Continuity Equations
 # Based on the LCPFCT version by Lab. for Computational Physics and Fluid Dynamics (NRL/MR/6410-93-7192 (April 1993))

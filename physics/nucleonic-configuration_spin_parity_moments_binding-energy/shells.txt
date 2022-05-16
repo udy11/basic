@@ -1,0 +1,20 @@
+s pp dsd f pfpg dghds fhfpip gidgd   l
+0 11 202 3 1314 24520 353161 46242
+
+s pp dsd f pfpg gdhds hffipp i	     l
+0 11 202 3 1314 42520 533611 6
+
+s pp dsd f pfpg gddsh hffppi gdigsdi l
+0 11 202 3 1314 42205 533116 4264026
+
+X-10, Z-12, B-14, D-16
+
+
+s + 2
+p - 42
+d + 64
+f - 86
+g + X8
+h - ZX
+i + BZ
+j - DB

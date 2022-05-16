@@ -1,4 +1,6 @@
 # Last Updated: 2019-Jul-08
+# Udaya Maurya (udaya_cbscients@yahoo.com, telegram: https://t.me/udy11)
+# Source: https://github.com/udy11, https://gitlab.com/udy11
 
 # This program runs a simple 1D gasdynamic shock through a uniform grid using lcpfct and its utility routines. The fluid is ideal and inviscid with constant gamma0 = 1.4. The boundary conditions are specified external values on both ends of the system.
 

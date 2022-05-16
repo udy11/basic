@@ -1,7 +1,3 @@
-# Some of my basic helpful codes
+This repository contains simple codes and tools that may be required in a programmer's routine tasks. The codes are from a variety of fields but majority are from numerical methods. Most codes are in a single file and independent of each other. Details of each are within the code files. A more comprehensive documentation will be added later.
 
-These are some small codes that are helpful in basic tasks in a code.
-
-Mostly in Fortran-95, C++ and Python-3. Some are in Mathematica and Matlab.
-
-If these codes were helpful to you and you would like to donate cryptocurrencies, please click [here](https://sites.google.com/view/udy11-donation/). Thanks :)
+For any feedback, query or discussion, please contact me on [email](mailto:udaya_cbscients@yahoo.com) or [Telegram](https://t.me/udy11). If any of my work has been useful to you and you would like to donate cryptocurrencies, please click [here](https://github.com/udy11/udy11/blob/main/Donate_Crypto.md) or [here](https://gitlab.com/udy11/udy11/-/blob/main/Donate_Crypto.md). Thanks for visiting :)

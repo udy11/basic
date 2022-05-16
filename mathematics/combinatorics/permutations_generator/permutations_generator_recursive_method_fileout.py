@@ -1,5 +1,6 @@
 # Last updated: 15-Aug-2013
-# Udaya Maurya (udaya_cbscients@yahoo.com)
+# Udaya Maurya (udaya_cbscients@yahoo.com, telegram: https://t.me/udy11)
+# Source: https://github.com/udy11, https://gitlab.com/udy11
 # Function to get permutations of objects
 
 # Method self-discovered, so there may be better ones

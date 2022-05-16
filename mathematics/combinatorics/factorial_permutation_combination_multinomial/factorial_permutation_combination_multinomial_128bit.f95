@@ -1,5 +1,6 @@
 ! Last updated: 11-May-2013
-! Udaya Maurya (udaya_cbscients@yahoo.com)
+! Udaya Maurya (udaya_cbscients@yahoo.com, telegram: https://t.me/udy11)
+! Source: https://github.com/udy11, https://gitlab.com/udy11
 ! Functions (128-bit) to calculate Factorial, Permutation,
 ! Combination and Multinomial Coefficient
 

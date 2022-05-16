@@ -1,0 +1,10 @@
+4
+0 0 1 2
+3 4 5 6
+0 0 7 0
+8 0 0 9
+
+# How data is arranged above:
+
+# First integer is n, the number of rows/columns in the square matrix A
+# Then follows n x n matrix A whose determinant is to be calculated

@@ -1,4 +1,6 @@
 # Last Updated: 2019-Jul-08
+# Udaya Maurya (udaya_cbscients@yahoo.com, telegram: https://t.me/udy11)
+# Source: https://github.com/udy11, https://gitlab.com/udy11
 
 # This program runs periodic convection problems using lcpfct and utility routines. The profile is a square wave. The velocity is constant in space and time and the grid is kept stationary.
 

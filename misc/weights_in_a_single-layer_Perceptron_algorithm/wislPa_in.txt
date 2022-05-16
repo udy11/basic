@@ -1,0 +1,23 @@
+4 3 3 0 0.1
+0 0 0
+1 0 0 1
+1 0 1 1
+1 1 0 1
+1 1 1 0
+
+How input parameters are arranged above:
+n k m b r
+w_i
+x_ij d_j
+
+What do symbols mean:
+n = number of inputs
+k = dimension of input
+m = number of times to iterate
+b = bias
+r = learning rate
+w_i = initial weights (should be k in number)
+x_ij = i^th entry of j^th input
+d_j = j^th desired output
+
+x_ij and d_j form the Training Set

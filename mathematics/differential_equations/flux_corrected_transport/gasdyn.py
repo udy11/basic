@@ -1,4 +1,6 @@
 # Last Updated: 2019-Jul-10
+# Udaya Maurya (udaya_cbscients@yahoo.com, telegram: https://t.me/udy11)
+# Source: https://github.com/udy11, https://gitlab.com/udy11
 
 # Tested with Python 3.6.4, Numpy 1.13.3
 
