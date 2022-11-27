@@ -27,7 +27,7 @@
 # Each str in mmiops will give mkvmerge input file options to that set of files
 # Inclusion/exclusion of tracks:
 #   -s 2, only uses subtitle track 2
-#   -a hin, only uses hindi audio tracks
+#   -a hin,eng only uses hindi and english audio tracks
 #   -a 2,3,4, only uses audio tracks 2,3,4
 #   -a !1, uses all audio tracks except 1
 #   Track IDs of streams can be checked using mkvmerge --identify filename (I think  MediaInfo shows +1),
@@ -53,7 +53,7 @@ import glob
 # INPUT
 bfln = 'matroska_muxer.bat'
 mmaddr = '"C:\\Program Files\\MKVToolNix\\mkvmerge.exe"'
-destination = ''    # path of folder where output media files will be written
+destination = ''    # path of folder where output media files will be written, ending with slash
 fyls = []
 fyls.append(['a.mp4', 'b.mp4', 'c.mp4'])    # glob.glob('path-to-folder-of-input-files\\*.mp4')
 fyls.append(['a.srt', 'b.srt', 'c.srt'])    # glob.glob('path-to-folder-of-input-files\\Subs\\*.srt')
@@ -83,7 +83,7 @@ bfl = open(bfln, 'w')
 for i in range(nf0):
     bfl.write(mmaddr + ' -o "' + destination + nms[i] + '" ' + mmgops)
     for k in range(nf):
-        bfl.write(' ' + mmiops[k] + ' ' + fyls[k][i])
+        bfl.write(' ' + mmiops[k] + ' "' + fyls[k][i] + '"')
     bfl.write('\n')
 bfl.close()
 print('check and manually run ' + bfln)
