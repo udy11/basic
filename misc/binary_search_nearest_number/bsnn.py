@@ -14,6 +14,8 @@
 # NOTE:
 # If x is at the center of two indices, output will be the left index
 
+import numpy as np
+
 def binarySearchNN(a, x):
     ''' (array, num) -> int
         Binary Search Nearest Number in a sorted Array of real numbers
@@ -23,7 +25,7 @@ def binarySearchNN(a, x):
         return 0
     i0 = 0
     i1 = na - 1
-    asc = -1 + 2 * (a[1] > a[0])    # 1 if ascending, -1 if descending
+    asc = -1 + 2 * (a[-1] >= a[0])    # 1 if ascending, -1 if descending
     while i1 - i0 > 1:
         im = (i0 + i1) // 2
         dx = asc * (x - a[im])
@@ -39,11 +41,12 @@ def binarySearchNN(a, x):
         return i1
 
 if __name__ == '__main__':
-    a = [i*i for i in  range(1, 6)]
+    argminSearchNN = lambda a, x: np.argmin(np.abs(np.array(a)-x))
+    a = [i*i for i in  range(1, 20)]
     xx = (6.3, 6.5, 6.6, -1, 48, 1, 9, 25)
     for _ in range(2):
         print('Array:', a)
         for x in xx:
-            print(f'Index nearest to {x} is', binarySearchNN(a, x))
+            print(f'Index nearest to {x} is', binarySearchNN(a, x), argminSearchNN(a, x))
         print()
         a.reverse()
