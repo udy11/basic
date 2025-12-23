@@ -5,7 +5,7 @@
 % current carrying coil at any point in space
 
 % ALL YOU NEED TO DO:
-% Call tcmfdtac() with:
+% Call mfoc() with:
 %   INPUT:
 %     uu = permeability constant of the medium
 %     cr = coil radius
@@ -24,7 +24,7 @@
 % Magnetic field blows up at the coil's position, make sure xr is not
 %   very near the coil
 
-function bm = tcmfdtac(uu,cr,ci,ax,xc,xr)
+function bm = mfoc(uu,cr,ci,ax,xc,xr)
     bm=zeros(3,1);
     x2=zeros(3,1);
     ax12=ax(1)*ax(1)+ax(2)*ax(2);
