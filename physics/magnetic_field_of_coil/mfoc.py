@@ -81,4 +81,61 @@ def mfoc(mu, cr, ci, ax, xc, xr):
 
 if __name__ == '__main__':
 
-    print(mfoc(4.0e-7*np.pi, 1.0, 7.1e5, np.array([0, 0, 1]), np.array([0, 0, 0.1]), np.array([1.39, 0, -0.2])))
+    atol = 1.0e-12
+    rtol = 1.0e-12
+
+    mu = 4.0e-7*np.pi
+    cr = 0.417
+    ci = 1.38e6
+    ax = np.array([0.0, 0.0, 1.0])
+    xc = np.array([0.0, 0.2, 0.1])
+    xr = np.array([0.3, -0.4, 2.0])
+
+    print('----- CHECK 01: TRANSLATION -----')
+    print('Checking if output is same if xc and xr are moved by same displacement vector')
+    dx = np.random.uniform(-100, 100, size=(3,))
+    bm0 = mfoc(mu, cr, ci, ax, xc, xr)
+    bm1 = mfoc(mu, cr, ci, ax, xc+dx, xr+dx)
+    print(f'B0: {bm0[0]:.15e}, {bm0[1]:.15e}, {bm0[2]:.15e}')
+    print(f'After moving by: {dx[0]:.15f}, {dx[1]:.15f}, {dx[2]:.15f}')
+    print(f'B1: {bm1[0]:.15e}, {bm1[1]:.15e}, {bm1[2]:.15e}')
+    print(f'Passed? {np.isclose(bm0, bm1, atol=atol, rtol=rtol)}')
+
+    print()
+    print('----- CHECK 02: ROTATION -----')
+    print('Checking if output is same if ax and xr are rotated by same angles')
+    a, b, g = np.random.uniform(0.0, 2.0*np.pi, size=(3,))
+    ca, cb, cg = np.cos(a), np.cos(b), np.cos(g)
+    sa, sb, sg = np.sin(a), np.sin(b), np.sin(g)
+    rot0 = np.array([[ca*cb, ca*sb*sg-sa*cg, ca*sb*cg+sa*sg],
+                     [sa*cb, sa*sb*sg+ca*cg, sa*sb*cg-ca*sg],
+                     [-sb,   cb*sg,          cb*cg]])
+    rot1 = np.array([[cb*cg, sa*sb*cg-ca*sg, ca*sb*cg+sa*sg],
+                    [cb*sg, sa*sb*sg+ca*cg, ca*sb*sg-sa*cg],
+                    [-sb,   sa*cb,          ca*cb]])
+    rot = rot0    # choose whether to use rot0 or rot1
+    bm0 = mfoc(mu, cr, ci, ax, xc, xr)
+    bm1_unrot = mfoc(mu, cr, ci, np.dot(rot, ax), xc, np.dot(rot, xr-xc)+xc)
+    bm1 = np.dot(np.linalg.inv(rot), bm1_unrot)    # rotating back the new B vector
+    print(f'B0: {bm0[0]:.15e}, {bm0[1]:.15e}, {bm0[2]:.15e}')
+    print(f'After rotating by Euler angles: {a:.15f}, {b:.15f}, {g:.15f}')
+    print(f'B1: {bm1[0]:.15e}, {bm1[1]:.15e}, {bm1[2]:.15e}')
+    print(f'Passed? {np.isclose(bm0, bm1, atol=atol, rtol=rtol)}')
+
+    print()
+    print('----- CHECK 03: REFLECTION -----')
+    print('Checking if output is same if ax and xr are rotated by same angles')
+    rx, ry, rz = [np.ones(3)] * 3
+    rx[0], ry[1], rz[2] = -1.0, -1.0, -1.0
+    bm0 = mfoc(mu, cr, ci, ax, xc, xr)
+    bm1_x = mfoc(mu, cr, ci, ax, xc, (xr-xc)*rx+xc)
+    bm1_y = mfoc(mu, cr, ci, ax, xc, (xr-xc)*ry+xc)
+    bm1_z = mfoc(mu, cr, ci, ax, xc, (xr-xc)*rz+xc)
+    print(f'B0:   {bm0[0]:.15e}, {bm0[1]:.15e}, {bm0[2]:.15e}')
+    print(f'After reflecting xr in x, y and z:')
+    print(f'B1_x: {bm1_x[0]:.15e}, {bm1_x[1]:.15e}, {bm1_x[2]:.15e}')
+    print(f'Passed? {np.isclose(bm0, bm1_x, atol=atol, rtol=rtol)}')
+    print(f'B1_y: {bm1_y[0]:.15e}, {bm1_y[1]:.15e}, {bm1_y[2]:.15e}')
+    print(f'Passed? {np.isclose(bm0, bm1_y, atol=atol, rtol=rtol)}')
+    print(f'B1_z: {bm1_z[0]:.15e}, {bm1_z[1]:.15e}, {bm1_z[2]:.15e}')
+    print(f'Passed? {np.isclose(bm0, bm1_z, atol=atol, rtol=rtol)}')
